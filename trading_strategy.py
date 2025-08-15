@@ -2,9 +2,6 @@ import backtrader as bt
 import backtrader.talib as btalib
 import quantstats as qs
 import pandas as pd
-import numpy as np
-import os
-from datetime import datetime
 from data_fetcher import fetch_stock_data
 
 class MultiIndicatorStrategy(bt.Strategy):
@@ -155,7 +152,7 @@ def run_backtest():
     cerebro.addstrategy(MultiIndicatorStrategy)
 
     # Load data
-    df = fetch_stock_data(symbol='BABA', period='2y')
+    df = fetch_stock_data(symbol='BABA', period='1y')
     if df is None or df.empty:
         print("No data available for backtesting.")
         return
@@ -189,7 +186,9 @@ def run_backtest():
     print('Final Portfolio Value: %.2f' % cerebro.broker.getvalue())
 
     # Plot the result
-    # cerebro.plot(style='candlestick')
+    img = cerebro.plot(style='candlestick')
+    # save the plot
+    img[0][0].savefig('baba_strategy.png')
 
     # Extract strategy returns for QuantStats
     strategy = results[0]
