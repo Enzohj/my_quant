@@ -204,5 +204,6 @@ def run_backtest():
     qs.reports.html(returns, output='strategy_performance.html', title='BABA Trading Strategy Performance')
     print('QuantStats report generated: strategy_performance.html')
 
+
 if __name__ == '__main__':
     run_backtest()

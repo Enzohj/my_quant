@@ -5,3 +5,4 @@ ta-lib>=0.4.24
 quantstats>=0.0.57
 akshare>=1.9.0
 matplotlib>=3.7.1
+futu-api

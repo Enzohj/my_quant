@@ -2,7 +2,7 @@ import akshare as ak
 import pandas as pd
 import os
 
-CACHE_DIR = 'cache/us_daily'
+CACHE_DIR = 'cache/akshare'
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 def fetch_stock_data(symbol='BABA', adjust="qfq", period=None, start_date:str=None, end_date:str=None):
